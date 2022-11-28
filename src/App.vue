@@ -1,21 +1,13 @@
 <template>
-  <div id="app">
-    <nav>
-      <router-link :to="{ path: '/' }">Home</router-link> |
-      <router-link :to="{ name: 'about', params: { name: 'John' } }">About</router-link>
-    </nav>
-    <router-view/>
-
-  </div>
+  <router-view/>
 </template>
 
-<script>
-export default {
-  methods: {
-  }
-}
-</script>
 <style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -34,6 +26,21 @@ nav a {
 }
 
 nav a.router-link-exact-active {
-  color: #42b983;
+  color: #409972;
+}
+
+.navbar{
+  font-size: 22px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgb(255, 255, 255);
+}
+.hrFirst{
+  border: 2px solid rgb(168, 88, 34);
+}
+body{
+  background: black;
 }
 </style>
