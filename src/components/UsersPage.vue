@@ -1,9 +1,4 @@
 <template>
-  <nav class="navbar">
-    <router-link to="/">Главная страница</router-link> &nbsp; | &nbsp;
-    <router-link to="/postsPage">Архив с постами</router-link> &nbsp; | &nbsp;
-    <router-link to="/UsersPage">Архив с пользователями</router-link>
-  </nav>
   <div class="usersWrapper">
     <div
       :response="response"
@@ -37,8 +32,7 @@ export default {
     };
   },
   methods: {},
-mounted(){
-}
+  mounted() {},
 };
 </script>
 

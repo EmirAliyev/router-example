@@ -1,9 +1,4 @@
 <template>
-   <nav class="navbar">
-   <router-link to="/">Главная страница</router-link> &nbsp; | &nbsp;
-   <router-link to="/postsPage">Архив с постами</router-link> &nbsp; | &nbsp;
-   <router-link class="active" to="/UsersPage">Архив с пользователями</router-link>
- </nav>
 <div class="oneUserInfo">
    <div style="margin-top:-30px;margin-bottom: 60px;">All Information about {{user.name.first}}</div>
    <img class="user_img" style="width:150px;margin-top:0px" :src="user.picture.large">

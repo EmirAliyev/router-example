@@ -1,46 +1,44 @@
 <template>
-    <nav class="navbar">
-    <router-link to="/">Главная страница</router-link> &nbsp; | &nbsp;
-    <router-link to="/postsPage">Архив с постами</router-link> &nbsp; | &nbsp;
-    <router-link to="/usersPage">Архив с пользователями</router-link>
-  </nav>
-  <hr class="hrFirst">
-<div class="wrapper">
-<div class="text">Онлайн архив пользователей и постов</div>
-<div class="buttons">
-  <button class="btn" @click="$router.push({name:'users'})">Пользователи</button>
-  <button class="btn" @click="$router.push({name:'posts', params:{id: '/'}})">Посты</button>
-</div>
-
-</div>
+  <div class="wrapper">
+    <div class="text">Онлайн архив пользователей и постов</div>
+    <div class="buttons">
+      <button class="btn" @click="$router.push({ name: 'users' })">
+        Пользователи
+      </button>
+      <button
+        class="btn"
+        @click="$router.push({ name: 'posts', params: { id: '/' } })"
+      >
+        Посты
+      </button>
+    </div>
+  </div>
 </template>
 
 <script>
 export default {
-  name: 'MainPage',
-
-}
+  name: "MainPage",
+};
 </script>
 
 <style scoped>
-.wrapper{
+.wrapper {
   display: flex;
   color: white;
   font-size: 45px;
   font-weight: 600px;
-  font-family:'Times New Roman', Times, serif;
-width: 800px;
-height: 200px;
-margin: 15% auto;
-justify-content: center;
-align-items: center;
-flex-direction: column;
+  font-family: "Times New Roman", Times, serif;
+  width: 800px;
+  height: 200px;
+  margin: 15% auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.text:hover{
+.text:hover {
   color: rgba(221, 218, 218, 0.8);
-
 }
-.buttons{
+.buttons {
   display: flex;
   width: 400px;
   height: 40px;
@@ -48,17 +46,17 @@ flex-direction: column;
   display: flex;
   justify-content: space-between;
 }
-.btn{
-width: 150px;
-font-weight: 600;
-font-size: 16px;
-background: white;
-border-radius: 6px;
+.btn {
+  width: 150px;
+  font-weight: 600;
+  font-size: 16px;
+  background: white;
+  border-radius: 6px;
 }
-.btn:hover{
+.btn:hover {
   background: rgba(221, 218, 218, 0.8);
 }
-.btn:active{
+.btn:active {
   background: rgba(22, 22, 22, 0.8);
   color: white;
 }

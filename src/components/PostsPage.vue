@@ -1,9 +1,4 @@
 <template>
-  <nav class="navbar">
-<router-link to="/">Главная страница</router-link> &nbsp; | &nbsp;
-  <router-link to="/postsPage"><p @click="clear">Архив с постами</p></router-link> &nbsp; | &nbsp;
-   <router-link to="/UsersPage">Архив с пользователями</router-link>
-  </nav>
   <div class="postsMass">
     <div class="forSearch">
       <input
@@ -43,23 +38,18 @@ export default {
   },
   methods: {
     pushLink() {
-      //Сохраняем данные из инпута в локальное хранилище
-      this.$router.push({ name: "posts", params: { id: this.newData } });
-      localStorage.setItem("inputValue", this.newData);
+      console.log(this.newData.length);
+      if (this.newData.length === 0) {
+        this.$router.push({ name: "posts" });
+      } else {
+        this.$router.push({ name: "postsTitle", params: { id: this.newData } });
+      }
     },
-    clear() {
-      this.newData = "";
-      this.$refs.myInput.value=''
-      // localStorage.clear() Как только использую, переходы отключаются, не пойму причины()
-      this.pushLink(); 
-    },
-
   },
   mounted() {
-    //как только страница загружается мы грузим в инпут и в нашу переменную информацию из локального хранилища
-    this.$refs.myInput.value = localStorage.getItem("inputValue");
-    this.newData = localStorage.getItem("inputValue");
-    this.pushLink();
+    if (this.$route.params.id) {
+      this.newData = this.$route.params.id;
+    }
   },
   computed: {
     //Связал через v-model переменную и инпут и таким образом поиск можно производить без запроса с кнопкой

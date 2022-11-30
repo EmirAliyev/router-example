@@ -1,28 +1,26 @@
 import { createRouter, createWebHistory } from "vue-router";
-import MainPage from '../components/MainPage.vue'
-import PostsPage from '../components/PostsPage.vue'
-import UsersPage from '../components/UsersPage.vue'
-import OneUserPage from '../components/OneUserPage.vue'
+import MainPage from "../components/MainPage.vue";
+import PostsPage from "../components/PostsPage.vue";
+import UsersPage from "../components/UsersPage.vue";
+import OneUserPage from "../components/OneUserPage.vue";
 
 const routes = [
   {
     path: "/",
     name: "home",
     component: MainPage,
-    alias: "/"
+    alias: "/",
   },
   {
-    path: "/PostsPage/",
+    path: "/PostsPage",
     name: "posts",
     component: PostsPage,
-  },  
+  },
   {
     path: "/PostsPage/:id",
-    name: "posts",
+    name: "postsTitle",
     component: PostsPage,
-    alias:"/PostsPage"
   },
-  
   {
     path: "/UsersPage",
     name: "users",
@@ -32,7 +30,7 @@ const routes = [
     path: "/UsersPage/:id",
     name: "userPage",
     component: OneUserPage,
-  }
+  },
 ];
 
 const router = createRouter({
